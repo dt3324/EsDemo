@@ -1,0 +1,8 @@
+logging:
+  level:
+    root: info
+cluster:
+  name: elasticsearch
+  ip: 192.168.1.229
+  port: 9300
+  max: 200
