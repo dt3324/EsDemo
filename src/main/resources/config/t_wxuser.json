@@ -1,0 +1,59 @@
+{"t_wxuser": {
+	"_all": {
+		"analyzer": "ik_smart"
+	},
+	"properties": {
+		"loc2": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"wxmember": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"loc1": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"sex": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"sign": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"device_unique": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"bindphone": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"bindqq": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"extends": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"nickname": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"tweibo": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"email": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"username": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		}
+	}
+}}

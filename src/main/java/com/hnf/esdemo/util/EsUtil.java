@@ -15,21 +15,21 @@ import java.util.List;
 public class EsUtil {
     /**
      * 拼接 查询条件
-     * @param searchs 查询条件
+     * @param search 查询条件
      * @param filedNames 查询的字段
      * @return queryBuilders
      */
-    public static QueryBuilder getQueryBuilders(String searchs, List<String> filedNames) {
-        String[] search = searchs.split(" ");
+    public static QueryBuilder getQueryBuilders(String search, List<String> filedNames) {
+        String[] strs = search.split(" ");
         BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
-        for (String s : search) {
-            if(s.isEmpty()){
-                for (String filedName : filedNames) {
-                    boolQueryBuilder.should(QueryBuilders.matchQuery(filedName, s));
+        for (String str : strs) {
+            if (str != null && !str.trim().isEmpty()) {
+                for (String field : filedNames) {
+                    boolQueryBuilder.should(QueryBuilders.matchQuery(field,str));
                 }
             }
         }
-        return QueryBuilders.boolQuery().must(boolQueryBuilder);
+        return  QueryBuilders.boolQuery().must(boolQueryBuilder);
     }
 
     /**
@@ -37,7 +37,7 @@ public class EsUtil {
      * @param fields 高亮字段
      * @return 高亮
      */
-    public static HighlightBuilder getHightBuilder(List<String> fields) {
+    public static HighlightBuilder getHighBuilder(List<String> fields) {
         HighlightBuilder highlightBuilder = new HighlightBuilder();
         fields.forEach(highlightBuilder::field);
         highlightBuilder.requireFieldMatch(false);
@@ -52,7 +52,7 @@ public class EsUtil {
      * @param highlightField 高亮对象
      * @return 返回高亮后的字符串
      */
-    public static String getHightLightStr(HighlightField highlightField){
+    public static String getHighLightStr(HighlightField highlightField){
         Text[] fragments = highlightField.fragments();
         StringBuilder stringBuilder = new StringBuilder();
         for (Text fragment : fragments) {

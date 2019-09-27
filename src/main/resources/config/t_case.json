@@ -1,0 +1,46 @@
+{
+         "t_case": {
+            "_all": {
+               "analyzer": "ik_smart"
+            },
+            "properties": {
+               "caseuniquemark": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "casefrom": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "casetype": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "casediscripte": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "casename": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "casenumb": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "casetime": {
+				  "format": "strict_date_optional_time||epoch_millis",
+				  "type": "date"
+               },
+                "usernumber" : {
+           		 "type" : "string",
+           		 "analyzer": "ik_smart"
+         	   },
+               "device_unique": {
+                  "type": "string",
+				  "analyzer": "ik_smart"
+               }
+            }
+         }
+      }
+}

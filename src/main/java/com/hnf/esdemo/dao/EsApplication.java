@@ -1,4 +1,4 @@
-package com.hnf.esdemo.service;
+package com.hnf.esdemo.dao;
 
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.RangeQueryBuilder;
@@ -17,4 +17,6 @@ public interface EsApplication {
                                 Integer size);
 
     void elasticUpdate(String index, String type, String id, Map document);
+
+    void elasticAdd(String index,String type,Map map);
 }

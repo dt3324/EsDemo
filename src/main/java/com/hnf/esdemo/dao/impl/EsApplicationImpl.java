@@ -1,7 +1,8 @@
-package com.hnf.esdemo.service.impl;
+package com.hnf.esdemo.dao.impl;
 
 import com.hnf.esdemo.pool.EsPool;
-import com.hnf.esdemo.service.EsApplication;
+import com.hnf.esdemo.dao.EsApplication;
+import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
@@ -54,7 +55,7 @@ public class EsApplicationImpl implements EsApplication {
                     .highlighter(hb)
                     .setFrom(from)
                     //设置查询方式 （效率最高）
-                    .setSearchType(SearchType.QUERY_AND_FETCH)
+                    .setSearchType(SearchType.QUERY_THEN_FETCH)
                     .setSize(size)
                     .execute()
                     .actionGet();
@@ -82,6 +83,23 @@ public class EsApplicationImpl implements EsApplication {
         try {
             client = esPool.getClient();
             client.prepareUpdate(index,type,id).setDoc(document).get();
+        }finally {
+            if(client!=null){
+                esPool.release(client);
+            }
+        }
+    }
+
+    @Override
+    public void elasticAdd(String index,String type,Map map){
+        IndexRequest indexRequest = new IndexRequest()
+                .index(index)
+                .type(type)
+                .source(map);
+        Client client = null;
+        try {
+            client = esPool.getClient();
+            client.index(indexRequest);
         }finally {
             if(client!=null){
                 esPool.release(client);

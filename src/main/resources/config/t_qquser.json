@@ -1,0 +1,51 @@
+{"t_qquser": {
+	"_all": {
+		"analyzer": "ik_smart"
+	},
+	"properties": {
+		"richbuffer": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"homeplace": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"qqfriend": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"sex": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"nickname": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"device_unique": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"e-mail": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"alias": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"uin": {
+			"analyzer": "ik_smart",
+			"type": "string"
+		},
+		"age": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"ispublicaccount": {
+			"index": "not_analyzed",
+			"type": "string"
+		}
+	}
+}}

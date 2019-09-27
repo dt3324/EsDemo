@@ -1,0 +1,51 @@
+{"qqmsg": {
+	"_all": {
+		"analyzer": "ik_max_word"
+	},
+	"properties": {
+		"c2cmsg_mark": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"issend": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"msgdata": {
+			"analyzer": "ik_max_word",
+			"type": "string"
+		},
+		"receiveruin": {
+			"analyzer": "ik_max_word",
+			"type": "string"
+		},
+		"shmsgseq": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"msgtime": {
+			"format": "strict_date_optional_time||epoch_millis",
+			"type": "date"
+		},
+		"uniseq": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"msguid": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"msgseq": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"msgtype": {
+			"index": "not_analyzed",
+			"type": "string"
+		},
+		"senderuin": {
+			"analyzer": "ik_max_word",
+			"type": "string"
+		}
+	}
+}}

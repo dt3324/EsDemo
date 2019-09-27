@@ -1,0 +1,38 @@
+{
+         "qqTroopMsg": {
+            "_all": {
+               "analyzer": "ik_max_word"
+            },
+            "properties": {
+               "troopuin": {
+                  "type": "string",
+                  "analyzer": "ik_max_word"
+               },
+               "msgseq": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+                "msgtime" : {
+           		 "type" : "date",
+           		 "format" : "strict_date_optional_time||epoch_millis"
+         	   },
+               "uniseq": {
+                  "type": "string",
+				  "index": "not_analyzed"
+               },
+               "msgtype": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "senderuin": {
+                  "type": "string",
+                  "analyzer": "ik_max_word"
+               },
+			   "msgdata": {
+                  "type": "string",
+                  "analyzer": "ik_max_word"
+               }
+            }
+         }
+      }
+}

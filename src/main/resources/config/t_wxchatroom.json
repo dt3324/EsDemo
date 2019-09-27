@@ -1,0 +1,26 @@
+{
+         "t_wxchatroom": {
+            "_all": {
+               "analyzer": "ik_smart"
+            },
+            "properties": {
+               "chatroomname": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "chatroomowner": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+                "wxmember" : {
+                  "type": "string",
+				  "index": "not_analyzed"
+         	   },
+               "chatroomnickname": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               }
+            }
+         }
+      }
+}

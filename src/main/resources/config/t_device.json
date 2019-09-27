@@ -1,0 +1,42 @@
+{
+         "t_device": {
+            "_all": {
+               "analyzer": "ik_smart"
+            },
+            "properties": {
+               "bt_mac": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "device_unique": {
+                  "type": "string",
+                  "analyzer": "ik_smart" 
+               },
+               "imei": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "wifi_mac": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "devicename": {
+                  "type": "string",
+                  "analyzer": "ik_smart"             
+				},
+               "type": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "usernumber": {
+                  "type": "string",
+                  "analyzer": "ik_smart" 
+               },
+                "caseuniquemark" : {
+                  "type": "string",
+                  "analyzer": "ik_smart" 
+         	   }
+            }
+         }
+      }
+}

@@ -1,0 +1,42 @@
+{
+         "wxmsg": {
+            "_all": {
+               "analyzer": "ik_max_word"
+            },
+            "properties": {
+               "receivername": {
+                  "type": "string",
+                  "analyzer": "ik_max_word"
+               },
+               "c2cmark": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+                "sendername" : {
+                  "type": "string",
+                  "analyzer": "ik_max_word"
+         	   },
+               "msgdata": {
+                   "type": "string",
+                  "analyzer": "ik_max_word"
+               },
+               "mediapath": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "uniseq": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+			   "msgtype": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+			   "msgtime": {
+           		 "type" : "date",
+           		 "format" : "strict_date_optional_time||epoch_millis"
+               }
+            }
+         }
+      }
+}

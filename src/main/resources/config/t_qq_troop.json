@@ -1,0 +1,42 @@
+{
+         "t_qq_troop": {
+            "_all": {
+               "analyzer": "ik_smart"
+            },
+            "properties": {
+               "troopuin": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "richfingermemo": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+                "troopowner" : {
+                  "type": "string",
+				  "index": "not_analyzed"
+         	   },
+               "trooplocation": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "qqmember": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "troopname": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+			   "fingertroopmemo": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+			   "troopmemo": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               }
+            }
+         }
+      }
+}

@@ -1,0 +1,58 @@
+{
+         "t_person": {
+            "_all": {
+               "analyzer": "ik_smart"
+            },
+            "properties": {
+               "usernumber": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "elsecallpeople": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "hometown": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "voucher": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "sex": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+               "reside": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "usertype": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               },
+                "elsecallpeoplenum" : {
+           		 "type" : "string",
+           		 "index": "not_analyzed"
+         	   },
+               "personname": {
+                  "type": "string",
+				  "analyzer": "ik_smart"
+               },
+               "phone": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+			   "caseuniquemark": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+			   "device_unique": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               }
+            }
+         }
+      }
+}

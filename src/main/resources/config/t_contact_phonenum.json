@@ -1,0 +1,22 @@
+{
+         "t_contact_phonenum": {
+            "_all": {
+               "analyzer": "ik_smart"
+            },
+            "properties": {
+               "phonenum": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "device_unique": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               },
+               "personname": {
+                  "type": "string",
+                  "analyzer": "ik_smart"
+               }
+            }
+         }
+      }
+}

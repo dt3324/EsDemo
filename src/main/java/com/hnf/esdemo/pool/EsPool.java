@@ -87,6 +87,7 @@ public class EsPool {
      */
     public synchronized Client getClient() {
         if (getSizeOfClients() == 0) {
+            System.out.println("连接池创建成功");
             clients = createClient(max, name, ip, port);
         }
         //如果队列中的剩余Client少于最小数量就把再创建最大数量的Client装进队列中
