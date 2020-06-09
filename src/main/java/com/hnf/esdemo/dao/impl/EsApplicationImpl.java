@@ -37,13 +37,8 @@ public class EsApplicationImpl implements EsApplication {
      * @return 返回查询结果
      */
     @Override
-    public SearchHits searchByBuilders(String index,
-                                       String type,
-                                       QueryBuilder queryBuilder,
-                                       RangeQueryBuilder rqb,
-                                       HighlightBuilder hb,
-                                       Integer from,
-                                       Integer size){
+    public SearchHits searchByBuilders(String index,String type,QueryBuilder queryBuilder,RangeQueryBuilder rqb,
+                                       HighlightBuilder hb,Integer from,Integer size){
         Client client = null;
         SearchResponse response;
         try{
@@ -51,7 +46,6 @@ public class EsApplicationImpl implements EsApplication {
             response = client.prepareSearch(index)
                     .setTypes(type)
                     .setQuery(queryBuilder)
-//                    .setPostFilter(rqb)
                     .highlighter(hb)
                     .setFrom(from)
                     //设置查询方式 （效率最高）
@@ -90,6 +84,12 @@ public class EsApplicationImpl implements EsApplication {
         }
     }
 
+    /**
+     * 向es中添加数据
+     * @param index
+     * @param type
+     * @param map
+     */
     @Override
     public void elasticAdd(String index,String type,Map map){
         IndexRequest indexRequest = new IndexRequest()

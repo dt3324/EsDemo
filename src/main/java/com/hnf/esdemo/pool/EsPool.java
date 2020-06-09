@@ -87,10 +87,10 @@ public class EsPool {
      */
     public synchronized Client getClient() {
         if (getSizeOfClients() == 0) {
-            System.out.println("连接池创建成功");
             clients = createClient(max, name, ip, port);
+            System.out.println("连接池创建成功");
         }
-        //如果队列中的剩余Client少于最小数量就把再创建最大数量的Client装进队列中
+        //如果队列中的剩余Client少于最小数量就再创建最大数量的Client装进队列中
         if (getSizeOfClients() <= MIN) {
             //有大量Client没有归还，实际容量接近之前容量的两倍
             for (int i = 0; i < max; i++) {
@@ -103,7 +103,10 @@ public class EsPool {
         }
         //如果队列中数量大于最大数量的两倍就进行缩容
         if (getSizeOfClients() > max << 1) {
-            clients = createClient(max, name, ip, port);
+            Client poll = clients.poll();
+            //清空队列 还有一部分没有返还的
+            clients.clear();
+            return poll;
         }
         return clients.poll();
     }

@@ -11,10 +11,7 @@ import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author dt
@@ -28,7 +25,8 @@ public class EsServiceImpl implements EsService {
     public List<Map<String, Object>> search(String search) {
         QueryBuilder queryBuilder = EsUtil.getQueryBuilders(search, Arrays.asList("casename", "usernumber"));
         HighlightBuilder highlightBuilder = EsUtil.getHighBuilder(Arrays.asList("casename", "usernumber"));
-        SearchHits searchHits = esApplication.searchByBuilders("infodata2", "t_case", queryBuilder, null, highlightBuilder, 0, 1);
+        SearchHits searchHits = esApplication.searchByBuilders("infodata2", "t_case", queryBuilder,
+                null, highlightBuilder, 0, 1);
         List<Map<String, Object>> results = new ArrayList<>();
         for (SearchHit searchHit : searchHits) {
             Map<String, Object> source = searchHit.getSource();

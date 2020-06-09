@@ -1,0 +1,4 @@
+1. 引入es需要依赖
+2. application.yml文件中配置es需要数据
+3. 创建esPool（es连接池）
+4. 创建esDao（es数据库的操作）
